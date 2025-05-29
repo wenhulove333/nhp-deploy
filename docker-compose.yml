@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+  nhp-server:
+    build:
+      context: .
+      target: nhp-server
+    image: nhp-server
+    privileged: true
+    volumes:
+      - ./etc/nhp-server:/app/etc
+    networks:
+      - nhpnet
+
+  nhp-agent:
+    build:
+      context: .
+      target: nhp-agent
+    image: nhp-agent
+    privileged: true
+    volumes:
+      - ./etc/nhp-agent:/app/etc
+    networks:
+      - nhpnet
+
+  nhp-db:
+    build:
+      context: .
+      target: nhp-db
+    image: nhp-db
+    privileged: true
+    volumes:
+      - ./etc/nhp-db:/app/etc
+    networks:
+      - nhpnet
+
+networks:
+  nhpnet:
+    driver: bridge

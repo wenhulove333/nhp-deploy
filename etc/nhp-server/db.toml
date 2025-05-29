@@ -1,0 +1,7 @@
+# list the data broker peers for the server under [[DBs]] table
+
+# PubKeyBase64: public key for the data broker in base64 format.
+# ExpireTime (epoch timestamp in seconds): peer key validation will fail when it expires.
+[[DBs]]
+PubKeyBase64 = "7FFv2+VMb8Ei6fscx0bjhihdDhQa3MTRfwKg/NtTqF4="
+ExpireTime = 1924991999

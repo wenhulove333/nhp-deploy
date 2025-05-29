@@ -1,0 +1,18 @@
+# NHP-Server base config
+# field with (-) does not support dynamic update
+
+# PrivateKeyBase64 (-): server private key in base64 format.
+# DefaultCipherScheme: 0: gmsm, 1: curve25519.
+# ListenIp (-): udp listening address.
+# ListenPort (-): udp listening port.
+# Hostname (-): server domain name.
+# LogLevel: 0: silent, 1: error, 2: info, 3: audit, 4: debug, 5: trace.
+# DisableAgentValidation: whether for the server to skip the agent's public key validation.
+PrivateKeyBase64 = "CLOi0ln9K1foCJUg2H8CvzZgpP8ItBOpeUzQXPkS6U8="
+DefaultCipherScheme = 0
+ListenIp = ""    # empty for ipv4 + ipv6, "0.0.0.0" for ipv4 only
+ListenPort = 62206
+Hostname = "localhost" # the hostname of NHP-Server
+LogLevel = 4
+DisableAgentValidation = false
+
