@@ -8,7 +8,7 @@ services:
     image: nhp-server
     privileged: true
     volumes:
-      - ./etc/nhp-server:/app/etc
+      - ./release/nhp-server/etc:/app/etc
     networks:
       - nhpnet
 
@@ -19,18 +19,18 @@ services:
     image: nhp-agent
     privileged: true
     volumes:
-      - ./etc/nhp-agent:/app/etc
+      - ./release/nhp-agent/etc:/app/etc
     networks:
       - nhpnet
 
-  nhp-db:
+  nhp-de:
     build:
       context: .
-      target: nhp-db
-    image: nhp-db
+      target: nhp-de
+    image: nhp-de
     privileged: true
     volumes:
-      - ./etc/nhp-db:/app/etc
+      - ./release/nhp-de/etc:/app/etc
     networks:
       - nhpnet
 

@@ -6,18 +6,18 @@ WORKDIR /src/opennhp
 # RUN git checkout dhp-crypto
 RUN make
 
-FROM wenhulove333/debian-network:1.0 AS nhp-server
+FROM debian AS nhp-server
 WORKDIR /app
 COPY --from=builder /src/opennhp/release/nhp-server .
 CMD ["/bin/bash", "-c", "tail -f /dev/null"]
 
 
-FROM wenhulove333/debian-network:1.0 AS nhp-agent
+FROM debian AS nhp-agent
 WORKDIR /app
 COPY --from=builder /src/opennhp/release/nhp-agent .
 CMD ["/bin/bash", "-c", "tail -f /dev/null"]
 
-FROM wenhulove333/debian-network:1.0 AS nhp-db
+FROM debian AS nhp-db
 WORKDIR /app
 # COPY --from=builder /src/opennhp/release/nhp-db .
 COPY --from=builder /src/opennhp/release/nhp-de .
